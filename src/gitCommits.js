@@ -9,7 +9,7 @@ const format = `%H${hashDelimiter}%B%n${commitDelimiter}`
 
 const buildGitArgs = (gitOpts) => {
   const { from, to, ...otherOpts } = gitOpts
-  const formatArg = `--format=${format}`
+  const formatArg = `--format="${format}"`
   const fromToArg = [from, to].filter(Boolean).join('..')
 
   const gitArgs = ['log', formatArg, fromToArg]
